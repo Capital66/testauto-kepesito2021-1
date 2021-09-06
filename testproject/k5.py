@@ -14,7 +14,7 @@ driver.get(URL)
 o	A bingo tábla 25 darab cellát tartalmaz
 o	A számlista 75 számot tartalmaz"""
 
-def test_good_bingo
+def test_good_bingo():
     cells = driver.find_elements_by_name("number")
     assert len(cells) == 25
 
