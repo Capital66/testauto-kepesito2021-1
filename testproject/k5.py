@@ -30,6 +30,10 @@ def test_good_bingo():
 o	Addig nyomjuk a play gobot amíg az első bingo felirat meg nem jelenik
 o	Ellenőrizzük, hogy a bingo sorában vagy oszlopában lévő számok a szelvényről tényleg a már kihúzott számok közül kerültek-e ki"""
 
+play_button = driver.find_elements_by_id("spin")
+play_button.click()
+
+
 """ TC03 - Új játékot tudunk indítani
 o	az init gomb megnyomásával a felület visszatér a kiindulási értékekhez
 o	új bingo szelvényt kapunk más számokkal."""
