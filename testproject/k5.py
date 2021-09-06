@@ -1,8 +1,9 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
+
 chrome_options = Options()
-#chrome_options.add_argument("--headless")
+# chrome_options.add_argument("--headless")
 import time
 
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
@@ -14,6 +15,7 @@ driver.get(URL)
 o	A bingo tábla 25 darab cellát tartalmaz
 o	A számlista 75 számot tartalmaz"""
 
+
 def test_good_bingo():
     cells = driver.find_elements_by_name("number")
     assert len(cells) == 25
@@ -22,6 +24,7 @@ def test_good_bingo():
     assert len(elements_number) == 75
 
     driver.close()
+
 
 """ TC02 -	Bingo számok ellenőzrzése:
 o	Addig nyomjuk a play gobot amíg az első bingo felirat meg nem jelenik
