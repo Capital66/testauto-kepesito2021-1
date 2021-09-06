@@ -1,8 +1,9 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
+
 chrome_options = Options()
-#chrome_options.add_argument("--headless")
+# chrome_options.add_argument("--headless")
 import time
 
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
@@ -25,26 +26,31 @@ result = driver.find_element_by_id("result")
 	b: <üres>
 	c: <nem látszik>"""
 
+
 def test_good_app():
-    a_input.send_keys(a_test_data [0])
-    b_input.send_keys(b_test_data [0])
+    a_input.send_keys(a_test_data[0])
+    b_input.send_keys(b_test_data[0])
     assert results.text == "display: none;"
+
 
 """ TC02 - Számítás helyes, megfelelő bemenettel
 	a: 2
 	b: 3
 	c: 10"""
 
+
 def test_good_data():
-    a_input.send_keys(a_test_data [1])
-    b_input.send_keys(b_test_data [1])
+    a_input.send_keys(a_test_data[1])
+    b_input.send_keys(b_test_data[1])
     submit_button.click()
     assert result.text == c_result_data[1]
+
 
 """ TC03 - Üres kitöltés:
 	a: <üres>
 	b: <üres>
 	c: NaN"""
+
 
 def test_clear_data():
     a_input.clear()
